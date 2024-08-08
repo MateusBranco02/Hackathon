@@ -22,3 +22,10 @@
     width: 100px;
     height: 30px;
 }
+
+.cadastrar:hover {
+    background-color: #0081eb;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}

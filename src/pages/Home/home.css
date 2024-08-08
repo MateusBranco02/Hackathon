@@ -30,6 +30,12 @@
     height: 40px;
 }
 
+.btnCadastrar:hover {
+    background-color: #0081eb;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
 .btnConsulta {
     background-color: green;
     color: #fff;
@@ -37,4 +43,11 @@
     border: none;
     width: 500px;
     height: 40px;
+}
+
+.btnConsulta:hover {
+    background-color: darkgreen;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
 }

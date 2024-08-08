@@ -11,7 +11,7 @@ export default function ConsultarPlaca() {
     const [totalVagas, setTotalVagas] = useState(0);
     const [inputLiberarVagas, setLiberarVagas] = useState(false);
     const [vagasLiberar, setVagasLiberar] = useState('');
-    const [pesquisado, setPesquisado] = useState(false); // Novo estado para verificar se uma pesquisa foi realizada
+    const [pesquisado, setPesquisado] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function ConsultarPlaca() {
             return;
         }
 
-        setPesquisado(true); // Marcar que uma pesquisa foi realizada
+        setPesquisado(true);
         const veiculo = placasCadastradas.find(e => e.placa === placa);
         if (veiculo) {
             setVeiculoEncontrado(veiculo);
@@ -55,7 +55,7 @@ export default function ConsultarPlaca() {
 
             setPlaca('');
             setVeiculoEncontrado(null);
-            setPesquisado(false); // Resetar o estado de pesquisa após autorização
+            setPesquisado(false);
         } else {
             toast.warning("Não há vagas disponíveis!");
         }
@@ -133,79 +133,10 @@ export default function ConsultarPlaca() {
                     <div>
                         <p>Placa não encontrada.</p>
                         <p>Realize o cadastro do veículo.</p>
-                        <button onClick={telaCadastro}>Ir para cadastro</button>
+                        <button className='btnIrCadastro' onClick={telaCadastro}>Ir para cadastro</button>
                     </div>
                 )}
             </div>
-
         </div>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-<div className='container'>
-            <div className='container-centro'>
-                <div className='container-consulta'>
-                    <div className='agrupar-botao'>
-                        <input
-                            type="text"
-                            value={placa}
-                            onChange={(e) => setPlaca(e.target.value)}
-                            placeholder="Digite a placa do carro"
-                        />
-                        <button onClick={verificarPlaca}>🔍</button>
-                    </div>
-                    <p className='qtdVagas'>Vagas disponíveis: {vagasDisponiveis} / {totalVagas}</p>
-                    <button onClick={() => setLiberarVagas(!inputLiberarVagas)}>
-                        Liberar vaga(s)
-                    </button>
-                    {inputLiberarVagas && (
-                        <div className='liberar-vagas'>
-                            <input
-                                type="number"
-                                value={vagasLiberar}
-                                onChange={(e) => setVagasLiberar(e.target.value)}
-                                placeholder="Número de vagas para liberar"
-                            />
-                            <button onClick={liberarVagas}>Confirmar</button>
-                        </div>
-                    )}
-                </div>
-
-                <div className='resultado'>
-                    {pesquisado && veiculoEncontrado && (
-                        <div>
-                            <p>Placa: {veiculoEncontrado.placa}</p>
-                            <p>Nome: {veiculoEncontrado.nome}</p>
-                            <p>Celular: {veiculoEncontrado.celular}</p>
-                            <p>CPF: {veiculoEncontrado.cpf}</p>
-                            <button onClick={autorizarAcesso}>Autorizar Acesso</button>
-                        </div>
-                    )}
-
-                    {pesquisado && !veiculoEncontrado && (
-                        <div>
-                            <p>Placa não encontrada.</p>
-                            <p>Realize o cadastro do veículo.</p>
-                            <button onClick={telaCadastro}>Ir para cadastro</button>
-                        </div>
-                    )}
-                </div>
-            </div>
-        </div>
-
-*/
