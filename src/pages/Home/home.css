@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.container .box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.container .btnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    gap: 20px;
+}
+
+.btnCadastrar {
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 500px;
+    height: 40px;
+}
+
+.btnConsulta {
+    background-color: green;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    width: 500px;
+    height: 40px;
+}
